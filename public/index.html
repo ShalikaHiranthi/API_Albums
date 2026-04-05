@@ -165,7 +165,10 @@ async function isLoggedIn() {
     const data = await res.json();
     //console.log(data.user);
 
-    return (data.loggedIn, data.user.role);
+    return {
+      loggedIn: data.loggedIn,
+      role: data.user?.role ?? null
+    };
 
   } catch (err) {
     console.error("Login check error:", err);
