@@ -30,7 +30,7 @@
   <div id="albums" class="container"></div>
 
 <script>
-  const API_BASE = '/api/albums'
+  const API_BASE = 'https://api-albums.onrender.com'
   const token = localStorage.getItem("token");
 
   async function loadAlbums() {
@@ -179,7 +179,7 @@ async function isLoggedIn() {
 document.getElementById("logoutBtn").addEventListener("click", async () => {
 
   try {
-    const response = await fetch("/api/logout", {
+    const response = await fetch(`${API_BASE}/api/logout`, {
       method: "POST",
       credentials: "include"
     });
