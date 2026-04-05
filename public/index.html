@@ -39,6 +39,8 @@
         credentials: "include"
       });
       const data = await res.json();
+      console.log(data.loggedIn)
+      console.log(data.user.role)
       return { loggedIn: data.loggedIn, role: data.user?.role ?? null };
     } catch (err) {
       console.error("Login check error:", err);
