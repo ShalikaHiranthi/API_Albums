@@ -80,7 +80,7 @@
 
   async function addAlbum(albumData) {
     try {
-      const response = await fetch('API_BASE', {
+      const response = await fetch('api/albums', {
         method: 'POST',
         credentials: "include",
         headers: {
