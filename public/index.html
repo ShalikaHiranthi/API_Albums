@@ -88,7 +88,7 @@
     const container = document.getElementById('albums');
     container.innerHTML = data.albums.map(album => `
       <div class="album">
-        <h3><a href="/albums/${album._id}">${album.title}</a></h3>
+        <h3><a href="/api/albums/${album._id}">${album.title}</a></h3>
         <p>Artist: ${album.artist}</p>
         <p>Year: ${album.year} | Genre: ${album.genre}</p>
         <p>Tracks: ${album.tracks}</p>
