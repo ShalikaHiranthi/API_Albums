@@ -45,8 +45,14 @@ router.post("/login", (req, res, next) => {
 // Logout
 router.post("/logout", (req, res) => {
   req.logout((err) => {
-    if (err) return res.status(500).json({ msg: err.message });
-    req.session.destroy(() => res.json({ msg: "Logged out successfully" }));
+    // ← Passport requires a callback
+    if (err) return next(err);
+    req.session.destroy((err) => {
+      // ← also destroy the session
+      if (err) return res.status(500).json({ message: "Logout failed" });
+      res.clearCookie("connect.sid"); // ← clear the cookie
+      res.status(200).json({ message: "Logged out" });
+    });
   });
 });
 
