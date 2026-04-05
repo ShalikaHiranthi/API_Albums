@@ -33,7 +33,7 @@ app.use(
     cookie: {
       secure: true, // HTTPS only in prod
       httpOnly: true,
-      sameSite: "none",
+      sameSite: "lax",
       maxAge: 1000 * 60 * 60 * 24, // 1 day
     },
   }),
