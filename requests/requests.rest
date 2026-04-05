@@ -1,0 +1,85 @@
+
+@hostname = 127.0.0.1 
+@port = {{$dotenv PORT}} 
+@host = {{hostname}}:{{port}}
+@VehicleID = {{createVehicle.response.body.data._id}}
+
+### Get all
+GET http://{{host}}/api/vehicles/
+
+### Create
+# A named request can be used to store fields that are returned from a response
+# so theree's no need to copy-paste the same values in multiple requests
+# Using the same name for multiple requests will overwrite the previous value
+# @name createVehicle
+POST http://{{host}}/api/vehicles/
+Content-Type: application/json
+
+{
+    "type":"EV",
+    "make":"Hyundai",
+    "model":"Kona"
+}
+
+### Create
+# @name createVehicle
+POST http://{{host}}/api/vehicles/
+Content-Type: application/json
+
+{
+    "type":"EV",
+    "make":"Tesla",
+    "model":"3"
+}
+
+### Create
+# @name createVehicle
+POST http://{{host}}/api/vehicles/
+Content-Type: application/json
+
+{
+  "type": "Passenger car",
+  "make": "Honda",
+  "model": "Transit"
+}
+
+### Create
+# @name createVehicle
+POST http://{{host}}/api/vehicles/
+Content-Type: application/json
+
+{
+  "type": "Van",
+  "make": "Ford",
+  "model": "Transit"
+}
+
+### Create
+# @name createVehicle
+POST http://{{host}}/api/vehicles/
+Content-Type: application/json
+
+{
+  "type": "Pick-up",
+  "make": "Dodge",
+  "model": "Ram"
+}
+
+### Get single
+GET http://{{host}}/api/vehicles/{{VehicleID}}
+
+### Modify
+PUT http://{{host}}/api/vehicles/{{VehicleID}}
+Content-Type: application/json
+
+{
+    "type":"Van",
+    "make":"Tesla",
+    "model":"3"
+}
+
+### Delete (won't work without query string "login=johndoe")
+DELETE http://{{host}}/api/vehicles/{{VehicleID}}
+
+### Delete with user information
+DELETE http://{{host}}/api/vehicles/{{VehicleID}}?login=johndoe

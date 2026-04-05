@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Album 1",
+    "artist": "Artist A",
+    "year": 2020,
+    "genre": "Rock",
+    "createdBy": "000000000000000000000001"
+  },
+  {
+    "title": "Album 2",
+    "artist": "Artist B",
+    "year": 2021,
+    "genre": "Pop",
+    "createdBy": "000000000000000000000001"
+  },
+  {
+    "title": "Album 3",
+    "artist": "Artist C",
+    "year": 2022,
+    "genre": "Jazz",
+    "createdBy": "000000000000000000000001"
+  }
+]

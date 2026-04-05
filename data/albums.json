@@ -1,0 +1,82 @@
+{
+  "albums": [
+    {
+      "id": 1,
+      "artist": "Toto",
+      "title": "Toto IV",
+      "year": 1982,
+      "genre": "Pop",
+      "tracks": 10
+    },
+    {
+      "id": 2,
+      "artist": "Steely Dan",
+      "title": "Aja",
+      "year": 1977,
+      "genre": "Jazz Rock",
+      "tracks": 7
+    },
+    {
+      "id": 3,
+      "artist": "Miles Davis",
+      "title": "Kind of Blue",
+      "year": 1959,
+      "genre": "Jazz",
+      "tracks": 5
+    },
+    {
+      "id": 4,
+      "artist": "Pink Floyd",
+      "title": "The Wall",
+      "year": 1979,
+      "genre": "Progressive Rock",
+      "tracks": 26
+    },
+    {
+      "id": 5,
+      "artist": "test Davis new",
+      "title": "Kind of light Blue",
+      "year": 2005,
+      "genre": "K-pop",
+      "tracks": 12
+    },
+    {
+      "id": 6,
+      "artist": "test new",
+      "title": "Kind of black",
+      "year": 2002,
+      "genre": "Pop",
+      "tracks": 8
+    },
+    {
+      "id": 7,
+      "artist": "Tyler",
+      "title": "Dark Green",
+      "year": 2014,
+      "genre": "K-Pop",
+      "tracks": 15
+    },
+    {
+      "id": 8,
+      "artist": "Tyler",
+      "title": "Dark Green 1",
+      "year": 2014,
+      "genre": "K-Pop",
+      "tracks": 15
+    },
+    {
+      "id": 9,
+      "artist": "new alnum",
+      "title": "Sky",
+      "year": 2020
+    },
+    {
+      "id": 11,
+      "artist": "new album",
+      "title": " Don't Tap the Glass",
+      "year": 2025,
+      "genre": "Pop",
+      "tracks": 10
+    }
+  ]
+}

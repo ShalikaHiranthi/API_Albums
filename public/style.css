@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #ccc;
+  padding: 40px;
+}
+.container div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+form {
+  background: #ffffff;
+  padding: 15px;
+  /* max-width: 400px; */
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+form input {
+  width: auto;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+#albums p {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#albums button {
+  margin-left: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+#albums button:hover {
+  background-color: #b52a37;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+#loginLink, #logoutBtn, #registerBtn{
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 10px 5px;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-family: Arial, sans-serif;
+}
+
+#registerBtn {
+  background-color: #0056b3;
+    color: #fff;
+}
+
+#loginLink {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#loginLink:hover {
+  background-color: #45a049;
+}
+
+#logoutBtn {
+  background-color: #f44336;
+  color: white;
+}
+
+#logoutBtn:hover {
+  background-color: #d32f2f;
+}

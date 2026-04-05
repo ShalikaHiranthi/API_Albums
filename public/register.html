@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Albums</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Register</h2>
+  <!-- 🔹 Add Register Form -->
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" />
+    <input type="password" id="passwordConfirm" placeholder="Confirm Password" />
+    <button type="submit">Register</button>
+  </form>
+
+  <hr/>
+  <br>
+  <a href="index.html">Back to Home</a>
+  <a href="login.html">Login</a>
+
+  <div id="msg" class="container"></div>
+
+  <script>
+    document
+    .getElementById("registerForm")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault(); 
+
+      const userData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        passwordConfirm: document.getElementById("passwordConfirm").value,
+      };
+
+      await addUser(userData);
+
+      e.target.reset();
+    });
+
+    const API_BASE = '/api/register'
+
+    async function addUser(userData) {
+  try {
+    const response = await fetch(API_BASE, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    })
+
+    if (response.ok) {
+      //loadAlbums() // Refresh the list
+    } else {
+      console.error('Failed to add album')
+    }
+  } catch (error) {
+    console.error('Error adding album:', error)
+  }
+}
+  </script>
+
+
+
+  
+</body>
+</html>
