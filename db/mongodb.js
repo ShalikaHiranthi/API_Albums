@@ -15,7 +15,6 @@ const connectMongoDB = async () => {
     .connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      tlsAllowInvalidCertificates: true,
     })
     .then(() => console.log("DB connected"))
     .catch((err) => console.error("DB connection error:", err));
