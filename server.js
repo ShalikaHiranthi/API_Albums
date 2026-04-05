@@ -14,6 +14,7 @@ const startServer = async () => {
         : process.env.MONGO_URI;
 
     await connectMongoDB(uri);
+    app.set("trust proxy", 1);
 
     app.listen(PORT, () => {
       console.log(`Server running on http://localhost:${PORT}`);
