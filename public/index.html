@@ -39,11 +39,11 @@
       const logged = await isLoggedIn();
       //console.log(logged)
       if (!logged) {
-        response = await fetch('/albums/all');
+        response = await fetch('api/albums/all');
       }
       else{
         if (logged == 'admin') {
-          response = await fetch('/albums/all');
+          response = await fetch('api/albums/all');
         }else{
           response = await fetch(API_BASE, {
           credentials: "include"
