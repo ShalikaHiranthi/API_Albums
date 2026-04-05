@@ -25,7 +25,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     console.log(data);
 
     if (response.ok) {
-      //window.location.href = `${API_BASE}`; // redirect after login
+      window.location.href = "/";
     } else {
       document.getElementById("loginMsg").innerText = data.msg || "Login failed";
     }
