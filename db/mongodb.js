@@ -11,7 +11,10 @@ const connectMongoDB = async () => {
       ? process.env.MONGO_URI_TEST
       : process.env.MONGO_URI;
 
-  await mongoose.connect(uri);
+  await mongoose
+    .connect(uri)
+    .then(() => console.log("DB connected"))
+    .catch((err) => console.error("DB connection error:", err));
 };
 
 export default connectMongoDB;
