@@ -20,13 +20,25 @@ app.use(express.json());
 app.use(express.static(path.join(path.resolve(), "public")));
 
 // Session middleware
+// app.use(
+//   session({
+//     secret: "mysecret",
+//     resave: false,
+//     saveUninitialized: false,
+//     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+//     cookie: { maxAge: 1000 * 60 * 60 },
+//   }),
+// );
 app.use(
   session({
-    secret: "mysecret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-    cookie: { maxAge: 1000 * 60 * 60 },
+    cookie: {
+      secure: process.env.NODE_ENV === "production", // HTTPS only in prod
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+    },
   }),
 );
 
