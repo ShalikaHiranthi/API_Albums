@@ -34,7 +34,7 @@
 
   async function isLoggedIn() {
     try {
-      const res = await fetch(`${API_BASE}/api/me`, { // ← full URL + backticks
+      const res = await fetch(`/api/me`, { // ← full URL + backticks
         method: "GET",
         credentials: "include"
       });
@@ -54,9 +54,9 @@
       let response;
 
       if (!loggedIn || role === 'admin') {
-        response = await fetch(`${API_BASE}/api/albums/all`); // ← backticks
+        response = await fetch(`/api/albums/all`); // ← backticks
       } else {
-        response = await fetch(`${API_BASE}/api/albums`, { // ← was missing /api/albums
+        response = await fetch(`/api/albums`, { // ← was missing /api/albums
           credentials: "include"
         });
       }
@@ -70,7 +70,7 @@
 
   async function addAlbum(albumData) {
     try {
-      const response = await fetch(`${API_BASE}/api/albums`, { // ← full URL + backticks
+      const response = await fetch(`/api/albums`, { // ← full URL + backticks
         method: 'POST',
         credentials: "include",
         headers: { 'Content-Type': 'application/json' },
@@ -101,7 +101,7 @@
     const confirmed = confirm("Are you sure you want to delete this album?");
     if (!confirmed) return;
 
-    const response = await fetch(`${API_BASE}/api/albums/${id}?debug=true`, { // ← full URL
+    const response = await fetch(`/api/albums/${id}?debug=true`, { // ← full URL
       method: "DELETE",
       credentials: "include"
     });
@@ -131,7 +131,7 @@
 
   document.getElementById("logoutBtn").addEventListener("click", async () => {
     try {
-      const response = await fetch(`${API_BASE}/api/logout`, {
+      const response = await fetch(`/api/logout`, {
         method: "POST",
         credentials: "include"
       });
