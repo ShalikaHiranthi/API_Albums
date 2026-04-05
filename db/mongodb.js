@@ -12,10 +12,7 @@ const connectMongoDB = async () => {
       : process.env.MONGO_URI;
 
   await mongoose
-    .connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(uri)
     .then(() => console.log("DB connected"))
     .catch((err) => console.error("DB connection error:", err));
 };
