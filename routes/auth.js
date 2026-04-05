@@ -43,7 +43,7 @@ router.post("/login", (req, res, next) => {
 });
 
 // Logout
-router.post("/logout", (req, res) => {
+router.post("/logout", (req, res, next) => {
   req.logout((err) => {
     // ← Passport requires a callback
     if (err) return next(err);
